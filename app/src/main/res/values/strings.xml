@@ -9,4 +9,12 @@
     <string name="rockRadiobutton">Rock</string>
     <string name="scissorRadiobutton">Scissor</string>
     <string name="startButton">Start</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_output_fragment">Output fragment</string>
+    <string name="backbutton">Back</string>
+    <string name="resulttext">Draw</string>
+    <string name="playertext">Rock</string>
+    <string name="computertext">Rock</string>
+    <string name="vstext">vs.</string>
 </resources>
