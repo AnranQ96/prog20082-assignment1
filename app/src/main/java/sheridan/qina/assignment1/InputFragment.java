@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class InputFragment extends Fragment {
 
@@ -20,14 +21,14 @@ public class InputFragment extends Fragment {
     }
 
     private RadioGroup mChoiceGroup;
-
+    private TextView NoCheckedRadio;
     private InputListener mInputListener;
 
     public InputFragment() {
         // Required empty public constructor
     }
 
-    public static InputFragment newInstance(){
+    public static InputFragment newInstance() {
         return new InputFragment();
     }
 
@@ -38,7 +39,7 @@ public class InputFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_input, container, false);
 
         mChoiceGroup = view.findViewById(R.id.radioGroup);
-
+        NoCheckedRadio = view.findViewById(R.id.noChoice);
         Button sendButton = view.findViewById(R.id.playButton);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,23 +52,29 @@ public class InputFragment extends Fragment {
     }
 
     private void showOutput() {
-        if(mInputListener != null){
-            // get the selected message
-            String message;
-            switch (mChoiceGroup.getCheckedRadioButtonId()) {
-                case R.id.paperRadioButton:
-                    message = getString(R.string.paperChoice);
-                    break;
-                case R.id.rockRadioButton:
-                    message = getString(R.string.rockChoice);
-                    break;
-                case R.id.scissorRadioButton:
-                    message = getString(R.string.scissorChoice);
-                    break;
-                default:
-                    message = getString(R.string.undefined);
-            }
+        //if none of the radio button is checked
+        if (mChoiceGroup.getCheckedRadioButtonId() == -1) {
+            NoCheckedRadio.setText(getString(R.string.noChoiceMessage));
+        } else {
+            if (mInputListener != null) {
+                // get the selected message
+                String message;
+                switch (mChoiceGroup.getCheckedRadioButtonId()) {
+                    case R.id.paperRadioButton:
+                        message = getString(R.string.paperChoice);
+                        break;
+                    case R.id.rockRadioButton:
+                        message = getString(R.string.rockChoice);
+                        break;
+                    case R.id.scissorRadioButton:
+                        message = getString(R.string.scissorChoice);
+                        break;
+                    default:
+                        message = getString(R.string.undefined);
+                }
                 mInputListener.updateMessage(message);
+                NoCheckedRadio.setText("");
+            }
         }
     }
 
@@ -77,7 +84,7 @@ public class InputFragment extends Fragment {
         try {
             mInputListener = (InputListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString()  + " must implement InputListener");
+            throw new ClassCastException(context.toString() + " must implement InputListener");
         }
     }
 
