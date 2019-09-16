@@ -3,6 +3,7 @@
     <string name="author">Anran Qin, 2019</string>
     <string name="gameTitle">Paper Rock Scissor</string>
     <string name="undefined">-1</string>
+    <string name="noChoiceMessage">Please select a radio!</string>
 
     <!-- InputFragment -->
     <string name="hello_input_fragment">Input fragment</string>

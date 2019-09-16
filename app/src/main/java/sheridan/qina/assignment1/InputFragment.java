@@ -67,7 +67,7 @@ public class InputFragment extends Fragment {
                 default:
                     message = getString(R.string.undefined);
             }
-            mInputListener.updateMessage(message);
+                mInputListener.updateMessage(message);
         }
     }
 

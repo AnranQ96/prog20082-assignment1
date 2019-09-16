@@ -2,7 +2,9 @@ package sheridan.qina.assignment1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements InputFragment.InputListener, OutputFragment.OutputListener {
 
@@ -23,8 +25,7 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Inp
     public void updateMessage(String message) {
         OutputFragment outputFragment = OutputFragment.newInstance(Integer.parseInt(message));
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.fragment_placeholder,outputFragment).addToBackStack(null).commit();
-
+        fragmentManager.beginTransaction().replace(R.id.fragment_placeholder, outputFragment).addToBackStack(null).commit();
     }
 
     @Override

@@ -24,12 +24,11 @@ public class OutputFragment extends Fragment {
     }
 
     private OutputListener mOutputListener;
-    private int mPlayerChoice;
+    private int mPlayerChoice, mComputerChoice;
     private static final String PLAYERCHOICE = "playerChoice";
+    private static final String COMPUTERCHOICE = "computerChoice";
     private PaperRockGame game = new PaperRockGame();
 
-
-    private String playerChoice, computerChoice, gameResult;
     private TextView pText, cText, rText;
 
     public OutputFragment() {
@@ -52,11 +51,14 @@ public class OutputFragment extends Fragment {
             Bundle arguments = getArguments();
             assert arguments != null;
             mPlayerChoice = arguments.getInt(PLAYERCHOICE);
+            mComputerChoice = game.getComputerChoice();
         }else{
             mPlayerChoice = savedInstanceState.getInt(PLAYERCHOICE);
+            mComputerChoice = savedInstanceState.getInt(COMPUTERCHOICE);
         }
         //store player choice from input fragment
         game.setUserChoice(mPlayerChoice);
+        game.setComputerChoice(mComputerChoice);
     }
 
     @Override
@@ -87,6 +89,7 @@ public class OutputFragment extends Fragment {
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(PLAYERCHOICE, mPlayerChoice);
+        outState.putInt(COMPUTERCHOICE, game.getComputerChoice());
     }
 
     @Override

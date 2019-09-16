@@ -8,9 +8,10 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:background="#A1E9B1"
         android:gravity="center_horizontal"
         android:text="@string/gameTitle"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
