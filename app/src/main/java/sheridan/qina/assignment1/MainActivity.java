@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity implements InputFragment.InputListener {
+public class MainActivity extends AppCompatActivity implements InputFragment.InputListener, OutputFragment.OutputListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,15 @@ public class MainActivity extends AppCompatActivity implements InputFragment.Inp
     }
 
     @Override
-    public void updateMessage(String text) {
+    public void updateMessage(String message) {
+        OutputFragment outputFragment = OutputFragment.newInstance(Integer.parseInt(message));
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragment_placeholder,outputFragment).addToBackStack(null).commit();
 
+    }
+
+    @Override
+    public void showInput() {
+        getSupportFragmentManager().popBackStack();
     }
 }

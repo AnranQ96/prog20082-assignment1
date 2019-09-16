@@ -56,13 +56,13 @@ public class InputFragment extends Fragment {
             String message;
             switch (mChoiceGroup.getCheckedRadioButtonId()) {
                 case R.id.paperRadioButton:
-                    message = getString(R.string.paperRadiobutton);
+                    message = getString(R.string.paperChoice);
                     break;
                 case R.id.rockRadioButton:
-                    message = getString(R.string.rockRadiobutton);
+                    message = getString(R.string.rockChoice);
                     break;
                 case R.id.scissorRadioButton:
-                    message = getString(R.string.scissorRadiobutton);
+                    message = getString(R.string.scissorChoice);
                     break;
                 default:
                     message = getString(R.string.undefined);

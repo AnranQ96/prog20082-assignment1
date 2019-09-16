@@ -2,16 +2,19 @@
     <string name="app_name">Assignment1</string>
     <string name="author">Anran Qin, 2019</string>
     <string name="gameTitle">Paper Rock Scissor</string>
-    <string name="undefined">Undefined</string>
+    <string name="undefined">-1</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- InputFragment -->
     <string name="hello_input_fragment">Input fragment</string>
     <string name="paperRadiobutton">Paper</string>
     <string name="rockRadiobutton">Rock</string>
     <string name="scissorRadiobutton">Scissor</string>
     <string name="startButton">Start</string>
+    <string name="paperChoice">0</string>
+    <string name="rockChoice">1</string>
+    <string name="scissorChoice">2</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- OutputFragment -->
     <string name="hello_output_fragment">Output fragment</string>
     <string name="backbutton">Back</string>
     <string name="resulttext">Draw</string>
@@ -19,6 +22,5 @@
     <string name="computertext">Rock</string>
     <string name="vstext">vs.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
